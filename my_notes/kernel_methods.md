@@ -91,7 +91,8 @@ Convert (1) to:
                                          $y = Φw$                                                       (3)
 Because we set prior distribution of w in (2) => (3) is Gaussian distribution (y). There for we need to find the mean and cov of y. And we have and $k(x, x')$ is the kernel function.
 
-           ![chapter6_5.png](./pictures/chapter6_5.png)
+          ![chapter6_5.png](./pictures/chapter6_5.png)
+   
 The specification of the Gaussian process is then completed by giving the covariance of $y(x)$ evaluated at any two values of $x$, which is given by the kernel function:
                                         $E[y(x_n)y(x_m)] = k(x_n , x_m)$
                   
