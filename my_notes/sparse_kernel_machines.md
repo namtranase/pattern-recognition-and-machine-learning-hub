@@ -17,21 +17,25 @@ The problem with maximize the margin is defined by argmax and constraint:
 In order to solve this constrained optimization problem, we introduce Lagrange
 multipliers $a_n >= 0$ 
 
-        ![chapter7_3.png](./pictures/chapter7_3.png)
+             ![chapter7_3.png](./pictures/chapter7_3.png)
              
 Where $a = (a_1 , . . . , a_N )^T$ . Note the minus sign in front of the Lagrange multiplier term, because we are minimizing with respect to w and b, and maximizing with respect to a.
 After derivate the $L$, we have:
 
-                               ![chapter7_4.png](./pictures/chapter7_4.png)
+                      ![chapter7_4.png](./pictures/chapter7_4.png)
   
  Plug back to L we have:
  
   ![chapter7_5.png](./pictures/chapter7_5.png)
   
-  New data is classify by:
-  
-                   ![chapter7_6.png](./pictures/chapter7_6.png)
-              
+New data is classify by:
+
+  ![chapter7_6.png](./pictures/chapter7_6.png)   (3)
+And a other thing is this constraint sastisfie the KKT condition:
+ ![chapter7_7.png](./pictures/chapter7_7.png)
+For every datapoint, , either the $a_n$ or $t_{n}y(x_n) - 1 = 1$.  So that datapoints with $a_n = 0$ will not show in equation (3) and make no contribute for the predict process. And the rest points are so call the _support vectors_.
+     => Once the model is trained, a significant proportion of the data points can be discarded and
+only the support vectors retained.
 ## Overlapping class distributions
 
 ##  Relation to logistic regression

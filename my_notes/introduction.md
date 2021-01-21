@@ -10,24 +10,92 @@ Some important tool use through the book:
 - information theory
 
 
-# Polynomial Curce Fiiting
+# Polynomial Curve Fitting
 
-             ![kernel_2.png](./pictures/chapter1_1.png)
+  ![kernel_2.png](./pictures/chapter1_1.png)
              
  - Using RMS errors to validate the generation of model
  - Watch the over-fitting problem! (Using the bayansian, maximum likelihood to solve)
  - Introducing the regularization, in order to discourage the coefficients from reaching large values
   => quadratic regularizer (`ridge regression`), in neural networks this approach is known as weight decay.
+ 
+ Summary of this sub_chapter: When deal with `Polynomial Curve`. We much to choose degree carefully. Using weight decay for later convinient. Using valid set and error measument proper for the better model!
+ 
+ => This book is all about the prob!!!
 
 # Probability Theory
+A key concept in the field of pattern recognition is that of uncertainty.
+=> Probability theory provides a consistent framework for the _quantification and manipulation_ of uncertainty.
+We have two random variables $X, x_{i,..M}$ and $Y, y_{j,..L}$ Some basic equations:
+- Joint probability: $P(X=x_i, Y=y_j)$ 
+ => `Sum rule`, and _marginal probability_ : $p(X = x_i) = \sum_{j=1}^{L}p(X = x_i, Y = y_j)$
  
-## Probability densities
- 
-## Expectations and covariations
+- Condition probability: $P(Y=y_j| X=x_i)$ 
+=> `Product rule`: $p(X = x_i , Y = y_j) = p(Y = y_j|X = x_i)p(X = x_i)$ (some trick calculate here)
 
+From two rule above, we have the bayes theorem, which used through this book:
+               $p(Y |X) = \frac{p(X|Y )p(Y )}{p(X)}$        and        $p(X) = \sum{p(X|Y )p(Y )}$ 
+
+Remember the `prior probability` (have before) and `posterior probability` (have after)
+
+## Probability densities
+ $p(x)$ is called the probability density over $x$ where:  $p(x ∈ (a, b)) = \int_{a}^{b}{p(x) dx}$ 
+                                                         
+## Expectations and covariations
+The average value of some function $f(x)$ under a probability distribution $p(x)$ is called the expectation of $f(x)$, defined by $E[f] = \int{p(x)f (x)dx}$ and will be denoted by $E[f]$. 
+
+The variance of $f(x)$ is defined by $var[f] = E[(f(x) − E[f(x)])^2]$ and provides a measure of how much variability there is in $f(x)$ around its mean value $E[f(x)]$. If x and y are independent, then their covariance vanishes.
 ## Bayensian probabilities
+Formular, with prior probability distribution $p(w)$.
+                           
+                           $p(w|D) = \frac{p(D|w)p(w)}{p(D)}$
+    
+- This allows us to evaluate the uncertainty in w after we have observed $D$ in the form
+of the posterior probability $p(w|D)$.
+- The quantity $p(D|w)$ on the right-hand side of Bayes’ theorem is evaluated for the observed data set D and can be viewed as a function of the parameter vector $w$ => `likelihood function`
+
+When have the likelihood, the we defined Bayes as:
+
+                               $posterior ∝ likelihood × prior$
+=> And the likelihood function $p(D|w)$  
+
+A widely used frequentist estimator is `maximum likelihood`, in which w is set to the value that maximizes the likelihood function $p(D|w)$. 
+
+**There has been much controversy and debate associated with the relative mer-
+its of the frequentist and Bayesian paradigms** _noninformative priors_ (when the chosing of prior is difficult)
+=> Bayesian methods based on poor choices of prior can give poor results with high
+confidence.
+Some extra material: sampling methods, such as Markov chain Monte Carlo
 
 ## The Gaussian distribution
+The most important probability distributions for continuous variables:
+
+ ![chapter1_2.png](./pictures/chapter1_2.png) 
+- Mean = $\mu$, the square root of the variance, given by $σ$, is called the standard deviation. And $β = 1/σ^2$ , is called the precision.
+
+Gaussian distribution defined over a D-dimensional: 
+
+![chapter1_3.png](./pictures/chapter1_3.png) 
+
+- Where the D-dimensional vector $μ$ is called the mean, the $D × D$ matrix $Σ$ is called
+the covariance.
+
+When viewed as a function of $μ$ and $σ^2$ , this is the likelihood function for the Gaus-
+sian for independent and identically distributed dataset $\textbf{x}$ :
+
+![chapter1_4.png](./pictures/chapter1_4.png) 
+- we shall determine values for the unknown parameters $μ$ and $σ^2$ in the Gaussian by maximizing the likelihood function. In practice, it is more convenient to maximize the log of the likelihood function.
+
+Apply logarit, we have:
+![chapter1_5.png](./pictures/chapter1_5.png) 
+
+- Maximizing above equation with respect to $μ$, we obtain the maximum likelihood solution
+given by $\mu_{ML} = \frac{1}{N}\sum_{n=1}^{N}x_n$ => which is the sample mean!!!.
+- Similarly, maximizing with respect to $σ^2$ is $\sigma_{ML}^{2} = \frac{1}{N}\sum_{n=1}^{N}(x_n - \mu_{ML})^2$  
+
+*But there are problem with maximum likelihood*: systematically underestimates the variance of the distribution. This is an example of a phenomenon called bias and is related to the problem of over-fitting encountered in the context of polynomial curve fitting.
+
+Sumary: We know the most important distribution for continue variables _Gauss_. How to measure mean and variation. The distribution is still true for vector $\textbf{x}$ (element of $\textbf{x}$ independency). How to calculate the maximum likelihood from this distrubition, and the problem with _variation-bias_.
 
 ##  Curve fitting re-visited
 
