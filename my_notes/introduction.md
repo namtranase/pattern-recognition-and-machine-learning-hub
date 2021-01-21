@@ -122,7 +122,9 @@ The new t is predict by distribution (so it not anymore depend on $w$):
 
 
 #  Model selection
-
+Introducing the _cross_validation_ method
+  ![chapter1_10.png](./pictures/chapter1_10.png)
+  
 # The curse of Dimensionality
 
 # Decision Theory
