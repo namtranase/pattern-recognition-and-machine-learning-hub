@@ -99,7 +99,25 @@ Sumary: We know the most important distribution for continue variables _Gauss_. 
 
 ##  Curve fitting re-visited
 
+Example given by: $p(t|x, w, β) = N(t|y(x, w), β^{-1}$ 
+
+ ![chapter1_6.png](./pictures/chapter1_6.png) 
+ 
+ We cal the maximum likelihood (ln version):
+  ![chapter1_7.png](./pictures/chapter1_7.png)
+  
+  Using the results of maximum likelihood above, we can calculate the $w_{ML}$ and $β_{ML}$.
+  => Having determined the parameters w and β, we can now make predictions for new values of x. Because we now have a probabilistic model, these are expressed in terms of the predictive distribution that gives the probability distribution over t, rather than simply a point estimate.
+  
+  From these things, we have introduction of _maximum posterior_:
+    ![chapter1_8.png](./pictures/chapter1_8.png) 
+  - We can now determine w by finding the most probable value of w given the data, in other words by maximizing the posterior distribution.
 ## Bayesian curve fitting
+Till now, we still need making a point estimate of $w$ and so this does not yet amount to a Bayesian treatment. Trying to fully Bayesian approach!!! => that we integrate over all values of $w$.
+
+The new t is predict by distribution (so it not anymore depend on $w$):
+ ![chapter1_9.png](./pictures/chapter1_9.png) 
+    
 
 
 
