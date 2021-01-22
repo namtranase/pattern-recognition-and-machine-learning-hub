@@ -123,10 +123,29 @@ The new t is predict by distribution (so it not anymore depend on $w$):
 
 #  Model selection
 Introducing the _cross_validation_ method
-  ![chapter1_10.png](./pictures/chapter1_10.png)
+![chapter1_10.png](./pictures/chapter1_10.png)
   
 # The curse of Dimensionality
+Assume we have thress class, and each datapoint has 12 dimesions. The figure below is a naive approach to classify classes. By using divided cells.
+![chapter1_11.png](./pictures/chapter1_11.png)
+  
+But the problem occurs when the dimension increase => the cells are increase exponential.![chapter1_12.png](./pictures/chapter1_12.png)
+
+Introducing the `manifold` technique.
 
 # Decision Theory
+Link: [Decision Theory explained](https://www.youtube.com/watch?v=KYRAO8f5rXA&ab_channel=mathematicalmonk)
+Using Probability theory to deal with quantifying and manipulating uncertainty. Combind this Decision theory to => make optimal decisions in situations involving uncertainty.
+
+## Minimizing the misclassification rate
+Updating...
+## Minimizing the expected loss
+
+## The reject option
+
+## Inference and decision
+
+## Loss functions for regression
+
 
 # Information Theory

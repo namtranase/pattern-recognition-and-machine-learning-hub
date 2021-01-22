@@ -47,12 +47,37 @@ The constraint are now:   $t_ny(x_n) >= 1 − ξ_n$
 
 Our goal is now to maximize the margin while softly penalizing points that lie on the wrong side of the margin boundary. And also introduce the $C$ penalty variable.
 
-The rest of process is almost similar to normal SVM but have two more variables $ξ$ and $C$.
+![chapter7_12.png](./pictures/chapter7_12.png) 
+- Where $C$ controls the trade-off between the slack variable penalty and the margin.
+=> C is a regularization coefficient because it controls the trade-off between minimizing training errors and controlling model complexity.
 
-One of the most popular approaches to training support vector machines is called sequential minimal optimization, or SMO. It takes the concept of chunking to the extreme limit and considers just two Lagrange multipliers at a time.
+The Largrange:
+![chapter7_9.png](./pictures/chapter7_9.png)
+
+- Where  ${a_n \geq 0}$ and $μ_n \geq 0$ 
+
+The KKT condition:
+![chapter7_13.png](./pictures/chapter7_13.png)
+=>
+![chapter7_15.png](./pictures/chapter7_15.png)
+
+After eliminate w, b, and $ξ_n$ from the Lagrangian using above equations, we have:
+![chapter7_14.png](./pictures/chapter7_14.png)
+
+And we have new constraint: 
+$0 \leq a_n \leq C$  and $\sum{a_n t_n} = 0$ => this is box constraint => Quadratic problem!!!
+
+With $a_n = 0$, the datapoints are not contribute to the predictive model. And the rest have $a_n > 0$ must satisfy:
+$t_n y(x_n) = 1 - ξ_n$
+
+$b$ can be calculated similar to normal svm (addition just care the datapoints having $0 < a_n < C$)
+
+
+One of the most popular approaches to training support vector machines is called `sequential minimal optimization, or SMO`. It takes the concept of chunking to the extreme limit and considers just two Lagrange multipliers at a time.
 
 
 ##  Relation to logistic regression
+Do somthings with Hinge Loss
 
 ##  Multiclass SVMs
 Outdate approachs :))
