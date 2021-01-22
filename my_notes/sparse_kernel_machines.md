@@ -80,7 +80,21 @@ One of the most popular approaches to training support vector machines is called
 Do somthings with Hinge Loss
 
 ##  Multiclass SVMs
-Outdate approachs :))
+Some old common methods:
+
+1. Vapnik's `one-versus-the-rest`
+Constructing $K$ separate SVMs, in which the $k^{th}$  model $y_k (x)$ is trained using the data from class $C_k$ as the positive
+examples and the data from the remaining $K − 1$ classes as the negative examples.
+=> lead to inconsistent results in which an input is assigned to multiple classes simultaneously.
+
+2. Weston and Watkins (1999) define a single objective function for training all `K SVMs`s simultaneously
+based on maximizing the margin from each to remaining classes.
+=> this can result in much slower training
+
+3. K(K − 1)/2 different 2-class SVMs on all possible pairs of classes - `one-versus-one`
+Classifing test points according to which class has the highest number of ‘votes’, an approach that is sometimes called 
+`one-versus-one`
+
 ## SVMs for regression
 
 ## Computational learning theory
