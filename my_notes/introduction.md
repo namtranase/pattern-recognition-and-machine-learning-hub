@@ -138,7 +138,17 @@ Link: [Decision Theory explained](https://www.youtube.com/watch?v=KYRAO8f5rXA&ab
 Using Probability theory to deal with quantifying and manipulating uncertainty. Combind this Decision theory to => make optimal decisions in situations involving uncertainty.
 
 ## Minimizing the misclassification rate
-Updating...
+![chapter1_13.png](./pictures/chapter1_13.png)
+
+Consider $C_k$ -> $R_k$ (decision regions). $R_k$ must be continuous but can have disjoint points (these points are missclass).
+
+So the optimal decision rule is minimize the $p$ mistake:
+                      $p(mistake) = \int_{R1}{p(x, C_2)dx} \int_{R2}{p(x, C_1)dx}$
+Choose the decision with $p(mistake)$ as small as possible!!!
+
+Another choise is we have $p(x, C_k ) = p(C_k |x)p(x)$ based on the product rule,  $p(x)$ is common
+=> we can restate this result as saying that the minimum probability of making a mistake is obtained if each value of x is assigned to the class for which the `posterior probability` $p(C_k |x)$ is largest.
+
 ## Minimizing the expected loss
 
 ## The reject option
