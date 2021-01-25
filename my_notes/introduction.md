@@ -155,7 +155,7 @@ Assume we have point x, which belong to the $C_k$, but is predicted to $C_j$. Th
 
 For a given input vector $x$, our uncertainty in the true class is expressed through the joint probability distribution $p(x, C_k)$ and so we seek instead to minimize the average loss, where the
 average is computed with respect to this distribution, which is given by:
- ![chapter1_14.png](./pictures/chapter1_14.png)
+![chapter1_14.png](./pictures/chapter1_14.png)
  
  Each $x$ can be assigned to one of regions $R_j$
  => Minimize above loss function => Minimize: $\sum_{k} L_{kj}p(x, C_k)$.
@@ -163,6 +163,10 @@ average is computed with respect to this distribution, which is given by:
  => trivial problem when we know the posterior class probabilities $p(C_k|x)$.
  
 ## The reject option
+Example: In our hypothetical medical illustration, it may be appropriate to use an automatic system to classify those X-ray images for which there is little doubt as to the correct class, while leaving a human expert to classify the more ambiguous cases.
+
+Introducing the threshold $θ$ where the posterior class probabilities $p(C_k|x)$ is less than or equal to $\theta$.
+![chapter1_15.png](./pictures/chapter1_15.png) 
 
 ## Inference and decision
 
