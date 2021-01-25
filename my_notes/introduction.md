@@ -150,7 +150,18 @@ Another choise is we have $p(x, C_k ) = p(C_k |x)p(x)$ based on the product rule
 => we can restate this result as saying that the minimum probability of making a mistake is obtained if each value of x is assigned to the class for which the `posterior probability` $p(C_k |x)$ is largest.
 
 ## Minimizing the expected loss
+Introduction of loss function or cost function.
+Assume we have point x, which belong to the $C_k$, but is predicted to $C_j$. The loss function is defined by: $L_{jk}, L_{jk}$ belong to $L_{matrix}$
 
+For a given input vector $x$, our uncertainty in the true class is expressed through the joint probability distribution $p(x, C_k)$ and so we seek instead to minimize the average loss, where the
+average is computed with respect to this distribution, which is given by:
+ ![chapter1_14.png](./pictures/chapter1_14.png)
+ 
+ Each $x$ can be assigned to one of regions $R_j$
+ => Minimize above loss function => Minimize: $\sum_{k} L_{kj}p(x, C_k)$.
+ Using the product rule: $p(x, C_k) = p(C_k|x)p(x)$, p(x) is common factor can be eliminate
+ => trivial problem when we know the posterior class probabilities $p(C_k|x)$.
+ 
 ## The reject option
 
 ## Inference and decision
