@@ -169,8 +169,20 @@ Introducing the threshold $θ$ where the posterior class probabilities $p(C_k|x)
 ![chapter1_15.png](./pictures/chapter1_15.png) 
 
 ## Inference and decision
+We devide classification problem to 2 stages: 
+- Inference stage: Use training data to learn a model for $p(C_k|x)$ 
+- Decision: Use this posterior prob to classify
+Another choice is using discriminant function (not using prob)
+
+Some advantages when using prob:
+- Minimizing risk
+- Reject option
+- Compensating for class priors
+- Combining models
 
 ## Loss functions for regression
-
+Comback to the regression problems. We defined the loss function $L(t, y(x))$.
+The expected value of $L$ is:
+![chapter1_16.png](./pictures/chapter1_16.png) 
 
 # Information Theory
