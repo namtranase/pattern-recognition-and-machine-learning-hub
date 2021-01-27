@@ -186,3 +186,18 @@ The expected value of $L$ is:
 ![chapter1_16.png](./pictures/chapter1_16.png) 
 
 # Information Theory
+[Classic series](https://www.youtube.com/watch?v=2s3aJfRr9gE&list=PLSQl0a2vh4HC9lvrBhVt4UUkhzpp3N5_x&ab_channel=KhanAcademyLabs)
+[Intuative link](https://towardsdatascience.com/what-is-the-information-in-information-theory-d916250e4899)
+- We consider a discrete variable $x$, the information is recieved when we observe a specific value for this var.
+=> The amount of information can be viewed as the _degree of surprise_ on learning the value of $x$. 
+=> The more we don't know about the value, the more information $x$ keep.
+
+- Variable $x$ has prob $p(x)$, we have the function $h(x)$ express the information content. If we have x, y independent,
+so that $h(x, y) = h(x) + h(y)$, also has $p(x, y) = p(x)p(y)$.
+=> **h(x)** should return the amount of information contained in the event **x** which is high for lower probability and low for high probability events.
+$h(x) = -log_{2} p(x)$ 
+- With the multiple random variables, the average amout of information is taking by the E of h(x) respect to dis $p(x)$:
+![chapter1_17.png](./pictures/chapter1_17.png) => This is entropy.
+
+## Relative entropy and mutual information
+Keep updating...
