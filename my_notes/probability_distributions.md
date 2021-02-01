@@ -24,6 +24,15 @@ The mean and variance:
 ![chapter2_4.png](./pictures/chapter2_4.png)
 
 ##  The beta distribution
+Introducing a prior distribution $p(μ)$ over the parameter $μ$. From the likelihood function $μ^x (1 − μ)^{1−x}$. If we choose the prior to be proportional to powers of $μ$ and $(1 − μ)$ 
+=> posterior distribution have the same functional form as the prior, it's call `conjugacy`
+
+Therefore choose a prior, the _beta distribution_:
+![chapter2_5.png](./pictures/chapter2_5.png)
+Beta distribution is normalized.
+
+The mean an variation of this distribution:
+![chapter2_6.png](./pictures/chapter2_6.png)
 # Mutinomial Variables
 
 # The Gaussian Distribution
